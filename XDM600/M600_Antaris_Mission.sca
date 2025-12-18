@@ -1,0 +1,214 @@
+stk.v.12.0
+WrittenBy    STK_v12.10.0
+BEGIN Access
+    Scenario/M600_Antaris_Mission/Satellite/M600_Antaris
+    Scenario/M600_Antaris_Mission/Facility/GS_Svalbard
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Transmit
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-12-17T18:22:26.000000000 2025-12-18T18:22:26.000000000
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-12-17T18:37:54.973132465 2025-12-17T18:48:44.689693140
+        2025-12-17T20:15:11.423665854 2025-12-17T20:24:27.582735843
+        2025-12-17T21:52:53.945806315 2025-12-17T22:00:38.106653020
+        2025-12-17T23:30:18.031404511 2025-12-17T23:37:35.129387222
+        2025-12-18T01:06:52.729178893 2025-12-18T01:15:13.712538560
+        2025-12-18T02:42:49.184032954 2025-12-18T02:52:49.858957115
+        2025-12-18T04:18:24.219883535 2025-12-18T04:29:47.412624450
+        2025-12-18T05:53:44.763163068 2025-12-18T06:05:54.256090320
+        2025-12-18T07:28:51.866456220 2025-12-18T07:41:14.089256087
+        2025-12-18T09:03:44.454930963 2025-12-18T09:15:59.943777980
+        2025-12-18T10:38:22.643805869 2025-12-18T10:50:29.877848580
+        2025-12-18T12:12:52.088722045 2025-12-18T12:25:01.122723919
+        2025-12-18T13:47:26.351538900 2025-12-18T13:59:44.287478162
+        2025-12-18T15:22:23.714777854 2025-12-18T15:34:42.420557695
+        2025-12-18T16:58:00.814487267 2025-12-18T17:09:54.704380396
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object2
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-12-17T18:22:26.000000000 2025-12-18T18:22:26.000000000
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-12-17T18:37:54.973132465 2025-12-17T18:48:44.689693140
+                        2025-12-17T20:15:11.423665854 2025-12-17T20:24:27.582735843
+                        2025-12-17T21:52:53.945806315 2025-12-17T22:00:38.106653020
+                        2025-12-17T23:30:18.031404511 2025-12-17T23:37:35.129387222
+                        2025-12-18T01:06:52.729178893 2025-12-18T01:15:13.712538560
+                        2025-12-18T02:42:49.184032954 2025-12-18T02:52:49.858957115
+                        2025-12-18T04:18:24.219883535 2025-12-18T04:29:47.412624450
+                        2025-12-18T05:53:44.763163068 2025-12-18T06:05:54.256090320
+                        2025-12-18T07:28:51.866456220 2025-12-18T07:41:14.089256087
+                        2025-12-18T09:03:44.454930963 2025-12-18T09:15:59.943777980
+                        2025-12-18T10:38:22.643805869 2025-12-18T10:50:29.877848580
+                        2025-12-18T12:12:52.088722045 2025-12-18T12:25:01.122723919
+                        2025-12-18T13:47:26.351538900 2025-12-18T13:59:44.287478162
+                        2025-12-18T15:22:23.714777854 2025-12-18T15:34:42.420557695
+                        2025-12-18T16:58:00.814487267 2025-12-18T17:09:54.704380396
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/M600_Antaris_Mission/Satellite/M600_Antaris
+    Scenario/M600_Antaris_Mission/Facility/GS_Hyderabad
+
+    IsComputed		 Yes
+    SaveComputedData		 Yes
+    ComputationMode		 1
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Object
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Transmit
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    SetMaxStepFromInsts		 Yes
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+
+    BEGIN ConsideredIntervals
+
+        2025-12-17T18:22:26.000000000 2025-12-18T18:22:26.000000000
+
+    END ConsideredIntervals
+
+    BEGIN AccessIntervals
+
+        2025-12-17T23:49:51.218215620 2025-12-17T23:57:30.893504526
+        2025-12-18T01:22:27.791687998 2025-12-18T01:34:27.348583402
+        2025-12-18T11:56:07.064823158 2025-12-18T12:06:27.935859724
+        2025-12-18T13:30:27.340281935 2025-12-18T13:41:13.890185343
+
+    END AccessIntervals
+
+    BEGIN StageList
+
+        BEGIN Stage
+
+            MaxRelMotion		 0.34
+
+            BEGIN ConstraintList
+
+                BEGIN Constraint
+
+                    Name		 LineOfSight
+                    Instance		 Object2
+                    Action		 IncludeIntervals
+                    Type		 ZeroBound
+                    ComputationID		 1
+
+                    BEGIN ConstraintInputTimes
+
+                        2025-12-17T18:22:26.000000000 2025-12-18T18:22:26.000000000
+
+                    END ConstraintInputTimes
+
+                    StartConstrainedByAvailability		 No
+                    StopConstrainedByAvailability		 No
+
+                    BEGIN ConstraintSatisfaction
+
+                        2025-12-17T23:49:51.218215620 2025-12-17T23:57:30.893504526
+                        2025-12-18T01:22:27.791687998 2025-12-18T01:34:27.348583402
+                        2025-12-18T11:56:07.064823158 2025-12-18T12:06:27.935859724
+                        2025-12-18T13:30:27.340281935 2025-12-18T13:41:13.890185343
+
+                    END ConstraintSatisfaction
+
+                END Constraint
+
+            END ConstraintList
+
+        END Stage
+
+
+    END StageList
+
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+
+    LineStyle		 0
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
