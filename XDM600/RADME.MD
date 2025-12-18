@@ -372,8 +372,4 @@ W ≈ 96.2 km
 - Graphics card supporting OpenGL for 3D rendering
 - Multi-core processor for computation performance
 
----
 
-**Report Prepared:** December 2025  
-**Document Version:** 1.0  
-**Classification:** Unclassified Technical Documentation
