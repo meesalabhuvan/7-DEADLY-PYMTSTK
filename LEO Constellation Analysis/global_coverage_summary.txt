@@ -1,0 +1,68 @@
+================================================================================
+SANYARK SPACE - GLOBAL COVERAGE ANALYSIS SUMMARY
+================================================================================
+
+CONSTELLATION CONFIGURATION:
+  Number of Planes: 4
+  Satellites per Plane: 8
+  Total Satellites: 32
+  Altitude: 788 km
+  Inclination: 86.4°
+  Sensor FOV: 62.5°
+
+COVERAGE ANALYSIS PERIOD:
+  Start: 1 Jun 2022 15:00:00.000
+  Stop: 2 Jun 2022 15:00:00.000
+  Resolution: 10° grid
+
+================================================================================
+REGIONAL COVERAGE RESULTS:
+
+
+North_America:
+  Average Coverage: 96.56%
+  Min Coverage: 85.59%
+  Max Coverage: 100.00%
+  Total Accesses: 101
+  Coverage Gaps: 1441
+  Worst Gap: 14.41%
+
+South_America:
+  Average Coverage: 85.09%
+  Min Coverage: 65.71%
+  Max Coverage: 93.84%
+  Total Accesses: 101
+  Coverage Gaps: 1441
+  Worst Gap: 34.29%
+
+Europe:
+  Average Coverage: 98.99%
+  Min Coverage: 71.96%
+  Max Coverage: 100.00%
+  Total Accesses: 101
+  Coverage Gaps: 108
+  Worst Gap: 28.04%
+
+Africa:
+  Average Coverage: 83.00%
+  Min Coverage: 65.89%
+  Max Coverage: 97.16%
+  Total Accesses: 101
+  Coverage Gaps: 1441
+  Worst Gap: 34.11%
+
+Asia:
+  Average Coverage: 89.34%
+  Min Coverage: 82.63%
+  Max Coverage: 95.18%
+  Total Accesses: 101
+  Coverage Gaps: 1441
+  Worst Gap: 17.37%
+
+Australia:
+  Average Coverage: 88.40%
+  Min Coverage: 52.04%
+  Max Coverage: 100.00%
+  Total Accesses: 101
+  Coverage Gaps: 1071
+  Worst Gap: 47.96%
