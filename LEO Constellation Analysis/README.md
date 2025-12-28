@@ -1,4 +1,4 @@
-# Sanyark Space - Global Coverage Analysis System
+# Global Coverage Analysis System
 
 ## 🛰️ Project Overview
 
