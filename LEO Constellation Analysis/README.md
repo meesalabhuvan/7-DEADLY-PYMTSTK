@@ -442,6 +442,4 @@ When reporting problems, include:
 - [ ] Ready to run: `python gobal_6_continent_analysis.py`
 
 
----
 
-**Build the future of autonomous space infrastructure with Sanyark Space! 🛰️🌍**
