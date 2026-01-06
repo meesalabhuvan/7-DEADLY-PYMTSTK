@@ -1,0 +1,481 @@
+%----------------------------------------
+%  GPS Constellation PDOP Analysis Script
+%  General Mission Analysis Tool (GMAT)
+%----------------------------------------
+%  Purpose: Analyze Position Dilution of Precision (PDOP)
+%  for a ground receiver using a 24-satellite GPS constellation
+%  ALL OUTPUTS IN EarthFixed (ECEF) FRAME - NO MIXING
+%----------------------------------------
+
+%----------------------------------------
+%  GPS Constellation (24 Satellites)
+%  6 Orbital Planes, 4 Satellites per Plane
+%----------------------------------------
+
+% Plane 1 (RAAN = 0 deg)
+Create Spacecraft GPS1;
+GMAT GPS1.DateFormat = UTCGregorian;
+GMAT GPS1.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS1.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS1.DisplayStateType = Keplerian;
+GMAT GPS1.SMA = 26560;
+GMAT GPS1.ECC = 0.0;
+GMAT GPS1.INC = 55.0;
+GMAT GPS1.RAAN = 0.0;
+GMAT GPS1.AOP = 0.0;
+GMAT GPS1.TA = 0.0;
+
+Create Spacecraft GPS2;
+GMAT GPS2.DateFormat = UTCGregorian;
+GMAT GPS2.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS2.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS2.DisplayStateType = Keplerian;
+GMAT GPS2.SMA = 26560;
+GMAT GPS2.ECC = 0.0;
+GMAT GPS2.INC = 55.0;
+GMAT GPS2.RAAN = 0.0;
+GMAT GPS2.AOP = 0.0;
+GMAT GPS2.TA = 90.0;
+
+Create Spacecraft GPS3;
+GMAT GPS3.DateFormat = UTCGregorian;
+GMAT GPS3.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS3.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS3.DisplayStateType = Keplerian;
+GMAT GPS3.SMA = 26560;
+GMAT GPS3.ECC = 0.0;
+GMAT GPS3.INC = 55.0;
+GMAT GPS3.RAAN = 0.0;
+GMAT GPS3.AOP = 0.0;
+GMAT GPS3.TA = 180.0;
+
+Create Spacecraft GPS4;
+GMAT GPS4.DateFormat = UTCGregorian;
+GMAT GPS4.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS4.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS4.DisplayStateType = Keplerian;
+GMAT GPS4.SMA = 26560;
+GMAT GPS4.ECC = 0.0;
+GMAT GPS4.INC = 55.0;
+GMAT GPS4.RAAN = 0.0;
+GMAT GPS4.AOP = 0.0;
+GMAT GPS4.TA = 270.0;
+
+% Plane 2 (RAAN = 60 deg)
+Create Spacecraft GPS5;
+GMAT GPS5.DateFormat = UTCGregorian;
+GMAT GPS5.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS5.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS5.DisplayStateType = Keplerian;
+GMAT GPS5.SMA = 26560;
+GMAT GPS5.ECC = 0.0;
+GMAT GPS5.INC = 55.0;
+GMAT GPS5.RAAN = 60.0;
+GMAT GPS5.AOP = 0.0;
+GMAT GPS5.TA = 0.0;
+
+Create Spacecraft GPS6;
+GMAT GPS6.DateFormat = UTCGregorian;
+GMAT GPS6.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS6.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS6.DisplayStateType = Keplerian;
+GMAT GPS6.SMA = 26560;
+GMAT GPS6.ECC = 0.0;
+GMAT GPS6.INC = 55.0;
+GMAT GPS6.RAAN = 60.0;
+GMAT GPS6.AOP = 0.0;
+GMAT GPS6.TA = 90.0;
+
+Create Spacecraft GPS7;
+GMAT GPS7.DateFormat = UTCGregorian;
+GMAT GPS7.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS7.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS7.DisplayStateType = Keplerian;
+GMAT GPS7.SMA = 26560;
+GMAT GPS7.ECC = 0.0;
+GMAT GPS7.INC = 55.0;
+GMAT GPS7.RAAN = 60.0;
+GMAT GPS7.AOP = 0.0;
+GMAT GPS7.TA = 180.0;
+
+Create Spacecraft GPS8;
+GMAT GPS8.DateFormat = UTCGregorian;
+GMAT GPS8.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS8.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS8.DisplayStateType = Keplerian;
+GMAT GPS8.SMA = 26560;
+GMAT GPS8.ECC = 0.0;
+GMAT GPS8.INC = 55.0;
+GMAT GPS8.RAAN = 60.0;
+GMAT GPS8.AOP = 0.0;
+GMAT GPS8.TA = 270.0;
+
+% Plane 3 (RAAN = 120 deg)
+Create Spacecraft GPS9;
+GMAT GPS9.DateFormat = UTCGregorian;
+GMAT GPS9.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS9.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS9.DisplayStateType = Keplerian;
+GMAT GPS9.SMA = 26560;
+GMAT GPS9.ECC = 0.0;
+GMAT GPS9.INC = 55.0;
+GMAT GPS9.RAAN = 120.0;
+GMAT GPS9.AOP = 0.0;
+GMAT GPS9.TA = 0.0;
+
+Create Spacecraft GPS10;
+GMAT GPS10.DateFormat = UTCGregorian;
+GMAT GPS10.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS10.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS10.DisplayStateType = Keplerian;
+GMAT GPS10.SMA = 26560;
+GMAT GPS10.ECC = 0.0;
+GMAT GPS10.INC = 55.0;
+GMAT GPS10.RAAN = 120.0;
+GMAT GPS10.AOP = 0.0;
+GMAT GPS10.TA = 90.0;
+
+Create Spacecraft GPS11;
+GMAT GPS11.DateFormat = UTCGregorian;
+GMAT GPS11.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS11.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS11.DisplayStateType = Keplerian;
+GMAT GPS11.SMA = 26560;
+GMAT GPS11.ECC = 0.0;
+GMAT GPS11.INC = 55.0;
+GMAT GPS11.RAAN = 120.0;
+GMAT GPS11.AOP = 0.0;
+GMAT GPS11.TA = 180.0;
+
+Create Spacecraft GPS12;
+GMAT GPS12.DateFormat = UTCGregorian;
+GMAT GPS12.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS12.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS12.DisplayStateType = Keplerian;
+GMAT GPS12.SMA = 26560;
+GMAT GPS12.ECC = 0.0;
+GMAT GPS12.INC = 55.0;
+GMAT GPS12.RAAN = 120.0;
+GMAT GPS12.AOP = 0.0;
+GMAT GPS12.TA = 270.0;
+
+% Plane 4 (RAAN = 180 deg)
+Create Spacecraft GPS13;
+GMAT GPS13.DateFormat = UTCGregorian;
+GMAT GPS13.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS13.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS13.DisplayStateType = Keplerian;
+GMAT GPS13.SMA = 26560;
+GMAT GPS13.ECC = 0.0;
+GMAT GPS13.INC = 55.0;
+GMAT GPS13.RAAN = 180.0;
+GMAT GPS13.AOP = 0.0;
+GMAT GPS13.TA = 0.0;
+
+Create Spacecraft GPS14;
+GMAT GPS14.DateFormat = UTCGregorian;
+GMAT GPS14.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS14.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS14.DisplayStateType = Keplerian;
+GMAT GPS14.SMA = 26560;
+GMAT GPS14.ECC = 0.0;
+GMAT GPS14.INC = 55.0;
+GMAT GPS14.RAAN = 180.0;
+GMAT GPS14.AOP = 0.0;
+GMAT GPS14.TA = 90.0;
+
+Create Spacecraft GPS15;
+GMAT GPS15.DateFormat = UTCGregorian;
+GMAT GPS15.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS15.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS15.DisplayStateType = Keplerian;
+GMAT GPS15.SMA = 26560;
+GMAT GPS15.ECC = 0.0;
+GMAT GPS15.INC = 55.0;
+GMAT GPS15.RAAN = 180.0;
+GMAT GPS15.AOP = 0.0;
+GMAT GPS15.TA = 180.0;
+
+Create Spacecraft GPS16;
+GMAT GPS16.DateFormat = UTCGregorian;
+GMAT GPS16.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS16.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS16.DisplayStateType = Keplerian;
+GMAT GPS16.SMA = 26560;
+GMAT GPS16.ECC = 0.0;
+GMAT GPS16.INC = 55.0;
+GMAT GPS16.RAAN = 180.0;
+GMAT GPS16.AOP = 0.0;
+GMAT GPS16.TA = 270.0;
+
+% Plane 5 (RAAN = 240 deg)
+Create Spacecraft GPS17;
+GMAT GPS17.DateFormat = UTCGregorian;
+GMAT GPS17.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS17.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS17.DisplayStateType = Keplerian;
+GMAT GPS17.SMA = 26560;
+GMAT GPS17.ECC = 0.0;
+GMAT GPS17.INC = 55.0;
+GMAT GPS17.RAAN = 240.0;
+GMAT GPS17.AOP = 0.0;
+GMAT GPS17.TA = 0.0;
+
+Create Spacecraft GPS18;
+GMAT GPS18.DateFormat = UTCGregorian;
+GMAT GPS18.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS18.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS18.DisplayStateType = Keplerian;
+GMAT GPS18.SMA = 26560;
+GMAT GPS18.ECC = 0.0;
+GMAT GPS18.INC = 55.0;
+GMAT GPS18.RAAN = 240.0;
+GMAT GPS18.AOP = 0.0;
+GMAT GPS18.TA = 90.0;
+
+Create Spacecraft GPS19;
+GMAT GPS19.DateFormat = UTCGregorian;
+GMAT GPS19.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS19.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS19.DisplayStateType = Keplerian;
+GMAT GPS19.SMA = 26560;
+GMAT GPS19.ECC = 0.0;
+GMAT GPS19.INC = 55.0;
+GMAT GPS19.RAAN = 240.0;
+GMAT GPS19.AOP = 0.0;
+GMAT GPS19.TA = 180.0;
+
+Create Spacecraft GPS20;
+GMAT GPS20.DateFormat = UTCGregorian;
+GMAT GPS20.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS20.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS20.DisplayStateType = Keplerian;
+GMAT GPS20.SMA = 26560;
+GMAT GPS20.ECC = 0.0;
+GMAT GPS20.INC = 55.0;
+GMAT GPS20.RAAN = 240.0;
+GMAT GPS20.AOP = 0.0;
+GMAT GPS20.TA = 270.0;
+
+% Plane 6 (RAAN = 300 deg)
+Create Spacecraft GPS21;
+GMAT GPS21.DateFormat = UTCGregorian;
+GMAT GPS21.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS21.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS21.DisplayStateType = Keplerian;
+GMAT GPS21.SMA = 26560;
+GMAT GPS21.ECC = 0.0;
+GMAT GPS21.INC = 55.0;
+GMAT GPS21.RAAN = 300.0;
+GMAT GPS21.AOP = 0.0;
+GMAT GPS21.TA = 0.0;
+
+Create Spacecraft GPS22;
+GMAT GPS22.DateFormat = UTCGregorian;
+GMAT GPS22.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS22.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS22.DisplayStateType = Keplerian;
+GMAT GPS22.SMA = 26560;
+GMAT GPS22.ECC = 0.0;
+GMAT GPS22.INC = 55.0;
+GMAT GPS22.RAAN = 300.0;
+GMAT GPS22.AOP = 0.0;
+GMAT GPS22.TA = 90.0;
+
+Create Spacecraft GPS23;
+GMAT GPS23.DateFormat = UTCGregorian;
+GMAT GPS23.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS23.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS23.DisplayStateType = Keplerian;
+GMAT GPS23.SMA = 26560;
+GMAT GPS23.ECC = 0.0;
+GMAT GPS23.INC = 55.0;
+GMAT GPS23.RAAN = 300.0;
+GMAT GPS23.AOP = 0.0;
+GMAT GPS23.TA = 180.0;
+
+Create Spacecraft GPS24;
+GMAT GPS24.DateFormat = UTCGregorian;
+GMAT GPS24.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT GPS24.CoordinateSystem = EarthMJ2000Eq;
+GMAT GPS24.DisplayStateType = Keplerian;
+GMAT GPS24.SMA = 26560;
+GMAT GPS24.ECC = 0.0;
+GMAT GPS24.INC = 55.0;
+GMAT GPS24.RAAN = 300.0;
+GMAT GPS24.AOP = 0.0;
+GMAT GPS24.TA = 270.0;
+
+%----------------------------------------
+%  Ground Station (Receiver)
+%  Austin, Texas coordinates
+%----------------------------------------
+
+Create GroundStation Receiver;
+GMAT Receiver.CentralBody = Earth;
+GMAT Receiver.StateType = Spherical;
+GMAT Receiver.HorizonReference = Ellipsoid;
+GMAT Receiver.Location1 = 30.0;              % Latitude (degrees)
+GMAT Receiver.Location2 = -97.0;             % Longitude (degrees)
+GMAT Receiver.Location3 = 0.165;             % Altitude (km)
+GMAT Receiver.Id = 'ReceiverStation';
+GMAT Receiver.MinimumElevationAngle = 5.0;   % 5-degree elevation mask
+
+%----------------------------------------
+%  Coordinate Systems
+%  EarthFixed = ECEF (Earth-Centered Earth-Fixed)
+%----------------------------------------
+
+Create CoordinateSystem EarthFixedCS;
+GMAT EarthFixedCS.Origin = Earth;
+GMAT EarthFixedCS.Axes = BodyFixed;
+
+%----------------------------------------
+%  Force Model
+%  Includes Earth gravity (4x4) and Sun point mass
+%----------------------------------------
+
+Create ForceModel GPS_ForceModel;
+GMAT GPS_ForceModel.CentralBody = Earth;
+GMAT GPS_ForceModel.PrimaryBodies = {Earth};
+GMAT GPS_ForceModel.PointMasses = {Sun};
+GMAT GPS_ForceModel.Drag = None;
+GMAT GPS_ForceModel.SRP = Off;
+GMAT GPS_ForceModel.GravityField.Earth.Degree = 4;
+GMAT GPS_ForceModel.GravityField.Earth.Order = 4;
+GMAT GPS_ForceModel.GravityField.Earth.PotentialFile = 'JGM2.cof';
+
+%----------------------------------------
+%  Propagator
+%  Runge-Kutta 89 with 60-second steps
+%----------------------------------------
+
+Create Propagator GPS_Propagator;
+GMAT GPS_Propagator.FM = GPS_ForceModel;
+GMAT GPS_Propagator.Type = RungeKutta89;
+GMAT GPS_Propagator.InitialStepSize = 60;
+GMAT GPS_Propagator.Accuracy = 9.999999999999999e-012;
+GMAT GPS_Propagator.MinStep = 0.001;
+GMAT GPS_Propagator.MaxStep = 60;
+GMAT GPS_Propagator.MaxStepAttempts = 50;
+
+%----------------------------------------
+%  Report Files
+%  CRITICAL: All positions in EarthFixed (ECEF) frame
+%----------------------------------------
+
+% GPS Satellite Positions in ECEF Frame
+Create ReportFile GPS_Positions;
+GMAT GPS_Positions.Filename = 'GPS_Positions.csv';
+GMAT GPS_Positions.Precision = 16;
+GMAT GPS_Positions.WriteHeaders = true;
+GMAT GPS_Positions.ColumnWidth = 23;
+GMAT GPS_Positions.WriteReport = true;
+
+% Receiver Position in ECEF Frame
+Create ReportFile Receiver_Position;
+GMAT Receiver_Position.Filename = 'Receiver_Position.csv';
+GMAT Receiver_Position.Precision = 16;
+GMAT Receiver_Position.WriteHeaders = true;
+GMAT Receiver_Position.ColumnWidth = 23;
+GMAT Receiver_Position.WriteReport = true;
+
+%----------------------------------------
+%  Visualization (Optional)
+%----------------------------------------
+
+Create OrbitView OrbitView1;
+GMAT OrbitView1.Add = {GPS1, GPS5, GPS9, GPS13, GPS17, GPS21, Earth, Receiver};
+GMAT OrbitView1.CoordinateSystem = EarthMJ2000Eq;
+GMAT OrbitView1.ViewPointReference = Earth;
+GMAT OrbitView1.ViewPointVector = [0 0 50000];
+GMAT OrbitView1.ViewDirection = Earth;
+GMAT OrbitView1.ViewScaleFactor = 3;
+
+Create GroundTrackPlot GroundTrack1;
+GMAT GroundTrack1.Add = {GPS1, GPS5, GPS9, GPS13, GPS17, GPS21};
+GMAT GroundTrack1.CentralBody = Earth;
+GMAT GroundTrack1.TextureMap = 'ModifiedBlueMarble.jpg';
+
+%----------------------------------------
+%  Mission Sequence
+%  Propagates for 24 hours with 60-second steps
+%  Outputs ALL positions in EarthFixed (ECEF) frame
+%----------------------------------------
+
+BeginMissionSequence;
+
+% Propagate all 24 GPS satellites synchronously for 24 hours
+While 'Propagate for 24 hours' GPS1.ElapsedDays < 1.0
+   
+   % Propagate all 24 satellites together by 60 seconds
+   Propagate 'Prop 60 sec' GPS_Propagator(GPS1, GPS2, GPS3, GPS4, GPS5, GPS6, GPS7, GPS8, GPS9, GPS10, GPS11, GPS12, GPS13, GPS14, GPS15, GPS16, GPS17, GPS18, GPS19, GPS20, GPS21, GPS22, GPS23, GPS24) {GPS1.ElapsedSecs = 60.0};
+   
+   % Write GPS satellite positions in EarthFixed (ECEF) frame
+   % Format: Time, GPS1.X, GPS1.Y, GPS1.Z, GPS2.X, GPS2.Y, GPS2.Z, ...
+   Report 'GPS Positions' GPS_Positions GPS1.UTCGregorian GPS1.EarthFixedCS.X GPS1.EarthFixedCS.Y GPS1.EarthFixedCS.Z GPS2.UTCGregorian GPS2.EarthFixedCS.X GPS2.EarthFixedCS.Y GPS2.EarthFixedCS.Z GPS3.UTCGregorian GPS3.EarthFixedCS.X GPS3.EarthFixedCS.Y GPS3.EarthFixedCS.Z GPS4.UTCGregorian GPS4.EarthFixedCS.X GPS4.EarthFixedCS.Y GPS4.EarthFixedCS.Z GPS5.UTCGregorian GPS5.EarthFixedCS.X GPS5.EarthFixedCS.Y GPS5.EarthFixedCS.Z GPS6.UTCGregorian GPS6.EarthFixedCS.X GPS6.EarthFixedCS.Y GPS6.EarthFixedCS.Z GPS7.UTCGregorian GPS7.EarthFixedCS.X GPS7.EarthFixedCS.Y GPS7.EarthFixedCS.Z GPS8.UTCGregorian GPS8.EarthFixedCS.X GPS8.EarthFixedCS.Y GPS8.EarthFixedCS.Z GPS9.UTCGregorian GPS9.EarthFixedCS.X GPS9.EarthFixedCS.Y GPS9.EarthFixedCS.Z GPS10.UTCGregorian GPS10.EarthFixedCS.X GPS10.EarthFixedCS.Y GPS10.EarthFixedCS.Z GPS11.UTCGregorian GPS11.EarthFixedCS.X GPS11.EarthFixedCS.Y GPS11.EarthFixedCS.Z GPS12.UTCGregorian GPS12.EarthFixedCS.X GPS12.EarthFixedCS.Y GPS12.EarthFixedCS.Z GPS13.UTCGregorian GPS13.EarthFixedCS.X GPS13.EarthFixedCS.Y GPS13.EarthFixedCS.Z GPS14.UTCGregorian GPS14.EarthFixedCS.X GPS14.EarthFixedCS.Y GPS14.EarthFixedCS.Z GPS15.UTCGregorian GPS15.EarthFixedCS.X GPS15.EarthFixedCS.Y GPS15.EarthFixedCS.Z GPS16.UTCGregorian GPS16.EarthFixedCS.X GPS16.EarthFixedCS.Y GPS16.EarthFixedCS.Z GPS17.UTCGregorian GPS17.EarthFixedCS.X GPS17.EarthFixedCS.Y GPS17.EarthFixedCS.Z GPS18.UTCGregorian GPS18.EarthFixedCS.X GPS18.EarthFixedCS.Y GPS18.EarthFixedCS.Z GPS19.UTCGregorian GPS19.EarthFixedCS.X GPS19.EarthFixedCS.Y GPS19.EarthFixedCS.Z GPS20.UTCGregorian GPS20.EarthFixedCS.X GPS20.EarthFixedCS.Y GPS20.EarthFixedCS.Z GPS21.UTCGregorian GPS21.EarthFixedCS.X GPS21.EarthFixedCS.Y GPS21.EarthFixedCS.Z GPS22.UTCGregorian GPS22.EarthFixedCS.X GPS22.EarthFixedCS.Y GPS22.EarthFixedCS.Z GPS23.UTCGregorian GPS23.EarthFixedCS.X GPS23.EarthFixedCS.Y GPS23.EarthFixedCS.Z GPS24.UTCGregorian GPS24.EarthFixedCS.X GPS24.EarthFixedCS.Y GPS24.EarthFixedCS.Z;
+   
+   % Write receiver position in EarthFixed (ECEF) frame
+   % Format: Time, Receiver.X, Receiver.Y, Receiver.Z
+   Report 'Receiver Position' Receiver_Position GPS1.UTCGregorian Receiver.EarthFixedCS.X Receiver.EarthFixedCS.Y Receiver.EarthFixedCS.Z;
+   
+EndWhile;
+
+%----------------------------------------
+%  Post-Processing Instructions
+%----------------------------------------
+
+% PDOP Calculation Workflow:
+% 
+% 1. This script generates two CSV files:
+%    - GPS_Positions.csv: All 24 satellite positions in ECEF (km)
+%      Columns: Time, GPS1_X, GPS1_Y, GPS1_Z, ..., GPS24_X, GPS24_Y, GPS24_Z
+%    - Receiver_Position.csv: Ground receiver position in ECEF (km)
+%      Columns: Time, Receiver_X, Receiver_Y, Receiver_Z
+%
+% 2. Python/MATLAB PDOP Calculation:
+%    a) Load both CSV files
+%    b) For each epoch (1440 epochs for 24 hours at 60-second steps):
+%       - Extract receiver position: [rx, ry, rz]
+%       - Extract all 24 satellite positions
+%       - For each satellite i:
+%         * Compute range vector: r_i = [sat_x - rx, sat_y - ry, sat_z - rz]
+%         * Compute range: rho_i = ||r_i||
+%         * Compute unit vector: u_i = r_i / rho_i
+%         * Compute elevation angle: elev_i = asin(u_i , receiver_up_vector)
+%       - Filter satellites with elevation > 5 degrees (visible satellites)
+%       - Build geometry matrix H (N x 4):
+%         * Each row i: [-u_ix, -u_iy, -u_iz, 1]
+%         * N = number of visible satellites (typically 6-12)
+%       - Compute covariance: Q = inv(transpose(H) * H)
+%       - Calculate PDOP: sqrt(Q[0,0] + Q[1,1] + Q[2,2])
+%    c) Generate plots:
+%       - PDOP vs. time (24-hour time series)
+%       - Number of visible satellites vs. time
+%       - Sky plot showing satellite geometry
+%
+% 3. Expected Results:
+%    - PDOP typically ranges from 1.5 to 4.0 for good GPS coverage
+%    - PDOP < 2.0 = Excellent
+%    - PDOP 2.0-5.0 = Good
+%    - PDOP > 5.0 = Poor geometry
+%    - Visible satellites: 6-12 at any given time
+%    - PDOP will vary throughout the day as constellation geometry changes
+%
+% 4. Key Advantages of This Script:
+%    - All outputs in consistent EarthFixed (ECEF) frame
+%    - No coordinate transformations required for PDOP calculation
+%    - Full 24-satellite GPS constellation with realistic parameters
+%    - 24-hour coverage with 1-minute resolution (1440 data points)
+%    - Receiver position fixed at Austin, Texas (30 N, 97 W)
+%    - 5-degree elevation mask for realistic visibility
+%
+% 5. CRITICAL: Frame Consistency Verification
+%    - Both GPS_Positions.csv and Receiver_Position.csv use EarthFixedCS
+%    - All X, Y, Z coordinates are in the same reference frame
+%    - Direct vector subtraction is valid without transformation
+%    - This eliminates coordinate frame mixing errors
+
+%----------------------------------------
+% End of Script
+%----------------------------------------
